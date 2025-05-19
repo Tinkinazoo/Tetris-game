@@ -4,7 +4,9 @@
   "homepage": "https://tinkinazoo.github.io/Tetris-game",  
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",    
   },
   "dependencies": {
     "react": "^18.2.0",
