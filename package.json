@@ -1,12 +1,12 @@
 {
   "name": "tetris-game",
   "version": "1.0.0",
-  "homepage": "https://tinkinazoo.github.io/Tetris-game",  
+  "homepage": "https://tinkinazoo.github.io/Tetris-game",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"    
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -16,6 +16,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
