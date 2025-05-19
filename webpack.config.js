@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: process.env.NODE_ENV === 'production' ? '/Tetris-game/' : '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -26,9 +26,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-            patterns: [
-        { from: 'src/404.html', to: '404.html' }
-      ]
+      template: './src/index.html',
+      filename: 'index.html',
     }),
   ],
   devServer: {
@@ -38,5 +37,6 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: true,
+    historyApiFallback: true,
   },
 };
