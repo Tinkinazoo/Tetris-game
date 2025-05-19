@@ -1,5 +1,5 @@
 import React from 'react';
-import { COLS, ROWS, BLOCK_SIZE } from '../game/constants';
+import { COLS, ROWS, BLOCK_SIZE, COLORS } from '../game/constants';
 import Cell from './Cell';
 
 interface BoardProps {
