@@ -34,4 +34,17 @@ const GameInfo: React.FC<GameInfoProps> = ({
         </button>
       </div>
       {isGameOver && (
-        <div style={{ marginTop: '
+        <div style={{ marginTop: '20px', color: 'red' }}>
+          <h2>Game Over!</h2>
+        </div>
+      )}
+      {isPaused && !isGameOver && (
+        <div style={{ marginTop: '20px', color: 'orange' }}>
+          <h2>Paused</h2>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default GameInfo;
