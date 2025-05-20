@@ -8,6 +8,7 @@ interface GameInfoProps {
   isPaused: boolean;
   onReset: () => void;
   onPause: () => void;
+  onButtonClick: (btn: "left" | "right" | "down" | "rotate") => void;
 }
 
 const GameInfo: React.FC<GameInfoProps> = ({
@@ -17,7 +18,8 @@ const GameInfo: React.FC<GameInfoProps> = ({
   isGameOver,
   isPaused,
   onReset,
-  onPause
+  onPause,
+  onButtonClick,
 }) => {
   return (
     <div style={{ marginLeft: '20px' }}>
@@ -33,6 +35,16 @@ const GameInfo: React.FC<GameInfoProps> = ({
           {isPaused ? 'Resume' : 'Pause'}
         </button>
       </div>
+      <div style={{ marginTop: '20px' }}>
+        <div>
+          <button onClick={() => {onButtonClick("left")}} style={{ marginLeft: '10px', marginTop: '5px' }}>← Left</button>
+          <button onClick={() => {onButtonClick("right")}} style={{ marginLeft: '10px', marginTop: '5px' }}>→ Right</button>
+        </div>
+        <div>
+          <button onClick={() => {onButtonClick("rotate")}} style={{ marginLeft: '10px', marginTop: '5px' }}>↶ Rotate</button>
+          <button onClick={() => {onButtonClick("down")}} style={{ marginLeft: '10px', marginTop: '5px' }}>↓ Down</button>
+        </div>
+      </div>      
       {isGameOver && (
         <div style={{ marginTop: '20px', color: 'red' }}>
           <h2>Game Over!</h2>

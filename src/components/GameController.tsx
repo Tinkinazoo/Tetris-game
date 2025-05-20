@@ -118,6 +118,25 @@ const GameController: React.FC = () => {
     requestRef.current = requestAnimationFrame(gameLoop);
   };
 
+  const handleButtonClick = (btn: "left" | "right" | "down" | "rotate") => {
+    if (!gameRef.current) return;
+
+    if (btn == "left") {
+      gameRef.current.movePiece('left');   
+    }
+    if (btn == "right") {
+      gameRef.current.movePiece('right');   
+    }
+    if (btn == "down") {
+      if (gameRef.current.movePiece('down')) {
+        gameRef.current.score += 1;
+      }   
+    }
+    if (btn == "rotate") {
+      gameRef.current.rotatePiece();   
+    }            
+  };
+
   const handleReset = () => {
     if (!gameRef.current) return;
     gameRef.current.resetGame();
@@ -148,6 +167,7 @@ const GameController: React.FC = () => {
           isPaused={gameState.isPaused}
           onReset={handleReset}
           onPause={handlePause}
+          onButtonClick={handleButtonClick}
         />
       </div>
     </div>
