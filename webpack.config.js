@@ -6,8 +6,8 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './bundle.js',
-    publicPath: process.env.NODE_ENV === 'production' ? '/Tetris-game/' : '/',
+    filename: 'bundle.js',
+    publicPath: '.',// process.env.NODE_ENV === 'production' ? '/Tetris-game/' : '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
