@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/', /* '/Tetris-game/', */
+    publicPath: process.env.NODE_ENV === 'production' ? '/Tetris-game/' : '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
