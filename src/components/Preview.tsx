@@ -29,7 +29,8 @@ const Preview: React.FC<PreviewProps> = ({ nextPiece }) => {
         display: 'grid',
         gridTemplateRows: `repeat(${NEXT_ROWS}, ${BLOCK_SIZE}px)`,
         gridTemplateColumns: `repeat(${NEXT_COLS}, ${BLOCK_SIZE}px)`,
-        border: '2px solid #333'
+        border: '2px solid #333',
+        width: 'fit-content',
       }}
     >
       {grid.flatMap((row, rowIndex) =>

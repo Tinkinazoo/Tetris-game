@@ -35,8 +35,8 @@ const Board: React.FC<BoardProps> = ({ board, piece }) => {
     <div 
       style={{
         display: 'grid',
-        gridTemplateRows: `repeat(${ROWS}, ${BLOCK_SIZE}px)`,
-        gridTemplateColumns: `repeat(${COLS}, ${BLOCK_SIZE}px)`,
+        gridTemplateRows: `repeat(${ROWS}, ${!isMobile ? BLOCK_SIZE : BLOCK_SIZE/2}px)`,
+        gridTemplateColumns: `repeat(${COLS}, ${!isMobile ? BLOCK_SIZE : BLOCK_SIZE/2}px)`,
         border: !isMobile ? '2px solid #333' : '1px solid #333'
       }}
     >

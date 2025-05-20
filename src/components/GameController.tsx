@@ -153,12 +153,12 @@ const GameController: React.FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: !isMobile ? '20px' : '10px' }}>
-      <div>
+    <div style={{ /*display: 'inline-block', justifyContent: 'center',*/ marginTop: !isMobile ? '20px' : '10px' }}>
+      <div style={{ display: 'inline-block' }}>
         <Board board={gameState.board} piece={gameState.piece} />
       </div>
       <div style={{ marginLeft: !isMobile ? '20px' : '10px' }}>
-        <div style={{ marginBottom: !isMobile ? '20px' : '10px' }}>
+        <div style={{ marginTop: !isMobile ? '20px' : '10px', display: 'inline-block', verticalAlign: 'top' }}>
           <h3>Next Piece:</h3>
           <Preview nextPiece={gameState.nextPiece} />
         </div>
