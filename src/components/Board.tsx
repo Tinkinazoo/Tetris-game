@@ -1,6 +1,7 @@
 import React from 'react';
 import { COLS, ROWS, BLOCK_SIZE, COLORS } from '../game/constants';
 import Cell from './Cell';
+import { useMediaQuery } from 'react-responsive';
 
 interface BoardProps {
   board: number[][];
@@ -16,6 +17,7 @@ const Board: React.FC<BoardProps> = ({ board, piece }) => {
   const { shape, x, y, color } = piece;
   const displayBoard = board.map(row => [...row]);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   // Add current piece to the display board
   shape.forEach((row, rowIndex) => {
     row.forEach((cell, colIndex) => {
@@ -35,7 +37,7 @@ const Board: React.FC<BoardProps> = ({ board, piece }) => {
         display: 'grid',
         gridTemplateRows: `repeat(${ROWS}, ${BLOCK_SIZE}px)`,
         gridTemplateColumns: `repeat(${COLS}, ${BLOCK_SIZE}px)`,
-        border: '2px solid #333'
+        border: !isMobile ? '2px solid #333' : '1px solid #333'
       }}
     >
       {displayBoard.flatMap((row, rowIndex) =>

@@ -4,6 +4,7 @@ import { KEY } from '../game/constants';
 import Board from './Board';
 import Preview from './Preview';
 import GameInfo from './GameInfo';
+import { useMediaQuery } from 'react-responsive';
 
 const GameController: React.FC = () => {
   const gameRef = useRef<Tetris | null>(null);
@@ -149,13 +150,15 @@ const GameController: React.FC = () => {
     updateGameState();
   };
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: !isMobile ? '20px' : '10px' }}>
       <div>
         <Board board={gameState.board} piece={gameState.piece} />
       </div>
-      <div style={{ marginLeft: '20px' }}>
-        <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginLeft: !isMobile ? '20px' : '10px' }}>
+        <div style={{ marginBottom: !isMobile ? '20px' : '10px' }}>
           <h3>Next Piece:</h3>
           <Preview nextPiece={gameState.nextPiece} />
         </div>
