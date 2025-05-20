@@ -33,9 +33,6 @@ export class Tetris {
   requestId: number | null;
 
   constructor() {
-    this.board = createEmptyBoard();
-    this.piece = this.createPiece();
-    this.nextPiece = randomShape();
     this.score = 0;
     this.level = 0;
     this.lines = 0;
@@ -43,7 +40,10 @@ export class Tetris {
     this.isPaused = false;
     this.dropTime = LEVEL[this.level as keyof typeof LEVEL];
     this.dropStart = 0;
-    this.requestId = null;
+    this.requestId = null;    
+    this.nextPiece = randomShape();    
+    this.board = createEmptyBoard();
+    this.piece = this.createPiece();
   }
 
   createPiece() {
