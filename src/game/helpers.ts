@@ -5,7 +5,7 @@ export const createEmptyBoard = (): number[][] => {
 };
 
 export const randomShape = (): number => {
-  return Math.floor(Math.random() * 7) + 1;
+  return Math.floor(Math.random() * 6);
 };
 
 export const rotateMatrix = (matrix: number[][]): number[][] => {
