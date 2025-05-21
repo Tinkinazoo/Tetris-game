@@ -26,13 +26,6 @@ const GameInfo: React.FC<GameInfoProps> = ({
 
   return (
     <div style={{ marginTop: !isMobile ? '5px' : '2px', display: 'inline-block' }}>
-      <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
-        <div>
-          <h3>Score: {score}</h3>
-          <h3>Level: {level}</h3>
-          <h3>Lines: {lines}</h3>
-        </div>
-      </div>
       <div style={{ display: 'inline-block' }}>
         <div style={{ marginTop: !isMobile ? '20px' : '10px' }}>
           <button onClick={onReset}>New Game</button>
@@ -51,6 +44,13 @@ const GameInfo: React.FC<GameInfoProps> = ({
           </div>
         </div>      
       </div>
+      <div style={!isMobile ? { verticalAlign: 'top' } : { verticalAlign: 'top', display: 'inline-block' }}>
+        <div>
+          <h3>Score: {score}</h3>
+          <h3>Level: {level}</h3>
+          <h3>Lines: {lines}</h3>
+        </div>
+      </div>      
     </div>
   );
 };

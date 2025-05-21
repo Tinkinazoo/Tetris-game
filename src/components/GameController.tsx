@@ -151,14 +151,40 @@ const GameController: React.FC = () => {
   };
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
-
-  return (
-    <div style={{ /*display: 'inline-block', justifyContent: 'center',*/ marginTop: !isMobile ? '20px' : '10px' }}>
-      <div style={{ display: 'inline-block' }}>
+  
+  if (isMobile) {
+    return (
+    <div style={{ /*display: 'inline-block', justifyContent: 'center',*/ marginTop: '5px' }}>
+      <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
         <Board board={gameState.board} piece={gameState.piece} />
       </div>
-      <div style={{ marginLeft: !isMobile ? '20px' : '10px' }}>
-        <div style={{ marginTop: !isMobile ? '20px' : '10px', display: 'inline-block', verticalAlign: 'top' }}>
+      <div style={{ marginLeft: '5px' }}>
+        <div style={{ marginTop: '5px', display: 'inline-block', verticalAlign: 'top' }}>
+          <h3>Next Piece:</h3>
+          <Preview nextPiece={gameState.nextPiece} />
+        </div>
+        <GameInfo
+          score={gameState.score}
+          level={gameState.level}
+          lines={gameState.lines}
+          isGameOver={gameState.isGameOver}
+          isPaused={gameState.isPaused}
+          onReset={handleReset}
+          onPause={handlePause}
+          onButtonClick={handleButtonClick}
+        />
+      </div>
+    </div>
+  );
+  }
+
+  return (
+    <div style={{ /*display: 'inline-block', justifyContent: 'center',*/ marginTop: '20px' }}>
+      <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
+        <Board board={gameState.board} piece={gameState.piece} />
+      </div>
+      <div style={{ marginLeft: '20px', display: 'inline-block' }}>
+        <div style={{ marginTop: '20px', display: 'inline-block', verticalAlign: 'top' }}>
           <h3>Next Piece:</h3>
           <Preview nextPiece={gameState.nextPiece} />
         </div>
