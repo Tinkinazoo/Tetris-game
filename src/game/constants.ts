@@ -1,6 +1,6 @@
 export const COLS = 10;
 export const ROWS = 20;
-export const BLOCK_SIZE = 20; // px
+export const BLOCK_SIZE = 15; // px
 export const NEXT_COLS = 4;
 export const NEXT_ROWS = 4;
 

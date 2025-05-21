@@ -159,10 +159,6 @@ const GameController: React.FC = () => {
         <Board board={gameState.board} piece={gameState.piece} />
       </div>
       <div style={{ marginLeft: '5px' }}>
-        <div style={{ marginTop: '5px', display: 'inline-block', verticalAlign: 'top' }}>
-          <h3>Next Piece:</h3>
-          <Preview nextPiece={gameState.nextPiece} />
-        </div>
         <GameInfo
           score={gameState.score}
           level={gameState.level}
