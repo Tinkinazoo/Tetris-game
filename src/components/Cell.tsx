@@ -12,8 +12,8 @@ const Cell: React.FC<CellProps> = ({ color }) => {
   return (
     <div 
       style={{
-        width: !isMobile ? BLOCK_SIZE : BLOCK_SIZE/2,
-        height: !isMobile ? BLOCK_SIZE : BLOCK_SIZE/2,
+        width: BLOCK_SIZE,
+        height: BLOCK_SIZE,
         backgroundColor: color,
         border: '1px solid rgba(0, 0, 0, 0.1)'
       }}

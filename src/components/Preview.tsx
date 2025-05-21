@@ -27,8 +27,8 @@ const Preview: React.FC<PreviewProps> = ({ nextPiece }) => {
     <div 
       style={{
         display: 'grid',
-        gridTemplateRows: `repeat(${NEXT_ROWS}, ${BLOCK_SIZE}px)`,
-        gridTemplateColumns: `repeat(${NEXT_COLS}, ${BLOCK_SIZE}px)`,
+        gridTemplateRows: `repeat(${NEXT_ROWS}, ${BLOCK_SIZE/2}px)`,
+        gridTemplateColumns: `repeat(${NEXT_COLS}, ${BLOCK_SIZE/2}px)`,
         border: '2px solid #333',
         width: 'fit-content',
       }}
